@@ -138,7 +138,8 @@ export const authReducer = createSlice({
         },
         [admin_login.rejected]: (state, { payload }) => {
             state.loader = false
-            state.errorMessage = payload.error
+            // state.errorMessage = payload.error
+            state.errorMessage = payload?.error || "An unexpected error occurred";
         },
         [admin_login.fulfilled]: (state, { payload }) => {
             state.loader = false
